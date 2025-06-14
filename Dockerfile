@@ -2,7 +2,7 @@
 #DockerFile esta divididido en dos capas
 
 
-##FROM maven:3.9.10-open-jdk-22 AS build
+FROM maven:3.9.10-open-jdk-22 AS build
 
 WORKDIR /app
 
@@ -21,8 +21,8 @@ FROM openjdk:22-jdk-alpine
 
 WORKDIR /app
 
-##COPY --from=build /app/target/PhegonHotel-0.0.1-SNAPSHOT.jar /app/PhegonHotel.jar
+COPY --from=build /app/target/PhegonHotel-0.0.1-SNAPSHOT.jar /app/PhegonHotel.jar
 
 EXPOSE 8080
 
-##ENTRYPOINT ["java","-jar","/app/PhegonHotel.jar"]
+ENTRYPOINT ["java","-jar","/app/PhegonHotel.jar"]
