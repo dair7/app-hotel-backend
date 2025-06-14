@@ -6,7 +6,7 @@ FROM maven:3.9.10-open-jdk-22 AS build
 
 WORKDIR /app
 
-COPY pom.xml /
+COPY pom.xml ./
 
 RUN mvn dependency:go-offline
 
